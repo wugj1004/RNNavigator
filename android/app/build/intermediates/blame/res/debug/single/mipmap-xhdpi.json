@@ -2,5 +2,9 @@
     {
         "merged": "/Users/wugj/android/react-native/hellowReact/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
         "source": "/Users/wugj/android/react-native/hellowReact/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/wugj/android/react-native/rn_workspace/hellowReact/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/Users/wugj/android/react-native/rn_workspace/hellowReact/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }
 ]

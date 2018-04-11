@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/wugj/android/react-native/rn_workspace/hellowReact/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/wugj/android/react-native/rn_workspace/hellowReact/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.4/res/xml/preferences.xml"
+    },
+    {
         "merged": "/Users/wugj/android/react-native/hellowReact/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
         "source": "/Users/wugj/android/react-native/hellowReact/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.4/res/xml/preferences.xml"
     }
