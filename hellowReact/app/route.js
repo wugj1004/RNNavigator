@@ -2,7 +2,10 @@ import React,{Component} from 'react'
 import {StyleSheet,Image} from 'react-native'
 import {StackNavigator, DrawerNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
 
-import Home from './container/App'
+import Touch from './component/TouchComponent'
+import Responder from './component/ResponderComponent'
+
+import Home from './container/ElementComponent'
 import Movie from './container/navigator/NavigatorParams'
 import Mine from './container/App'
 
@@ -11,6 +14,8 @@ import NavigatorTabItem from './container/navigator/NavigatorTabItem'
 import NavigatorWithParams from './container/navigator/NavigatorWithParams'
 import NavigatorOutParams from './container/navigator/NavigatorOutParams'
 import Wallet from './container/App'
+
+
 /**
  * 配置底部标签
  */
@@ -98,7 +103,7 @@ const Tab = TabNavigator({
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',//tabBar显示位置
     swipeEnabled: true,//滑动切换页面
-    animationEnabled: true,//点击按钮切换页面动画切换
+    animationEnabled: false,//点击按钮切换页面动画切换
     lazy: true,//除初始化页面外延迟加载
     backBehavior: 'none',
     tabBarOptions: {
@@ -146,6 +151,12 @@ const Stack = StackNavigator({
             title: '钱包',
         }
     },
+    Touch:{
+        screen: Touch,
+    },
+    Responder:{
+        screen: Responder,
+    }
 });
 
 /**

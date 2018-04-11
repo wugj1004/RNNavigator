@@ -8,9 +8,9 @@ import {DrawerNavigator, TabNavigator,TabBarBottom} from 'react-navigation'
 
 //展示的页面
 import NavigatorTabItem from './NavigatorTabItem'
-import Home from './../navigator/NaviDrawer';
-import Stack from './../navigator/NaviStack';
-import Mine from './../App';
+import Home from '../navigator/NaviDrawer';
+import Stack from '../navigator/NaviStack';
+import Mine from '../App';
 
 
 export default NaviHome = TabNavigator({
@@ -66,8 +66,8 @@ export default NaviHome = TabNavigator({
     initialRouteName: 'home',//初始化页面
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',//tabBar显示位置
-    swipeEnabled: true,//滑动切换页面
-    animationEnabled: true,//点击按钮切换页面动画切换
+    swipeEnabled: false,//滑动切换页面
+    animationEnabled: false,//点击按钮切换页面动画切换
     lazy: true,//除初始化页面外延迟加载
     backBehavior: 'none',
     tabBarOptions: {
