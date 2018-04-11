@@ -1,0 +1,1 @@
+npm install --save react-navigation 安装导航栏依赖库官方主推
