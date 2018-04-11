@@ -4,6 +4,7 @@ import {StackNavigator, DrawerNavigator, TabNavigator, TabBarBottom} from 'react
 
 import Touch from './component/TouchComponent'
 import Responder from './component/ResponderComponent'
+import LifeCycle from './component/LifeCycleComponent'
 
 import Home from './container/ElementComponent'
 import Movie from './container/navigator/NavigatorParams'
@@ -156,6 +157,9 @@ const Stack = StackNavigator({
     },
     Responder:{
         screen: Responder,
+    },
+    LifeCycle:{
+        screen:LifeCycle,
     }
 });
 

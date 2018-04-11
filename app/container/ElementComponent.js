@@ -13,6 +13,7 @@ class ElementComponent extends Component{
                 <View style={elementStyles.button}>
                     <Button  title="按钮手势响应" color="blue" onPress={()=>navigate('Touch',{title:'按钮手势响应'})}/>
                     <Button title="拖动滑动手势响应" color="black" onPress={()=>navigate("Responder",{title:'拖动滑动手势响应'})}/>
+                    <Button title="生命周期" color="orange" onPress={()=>navigate("LifeCycle",{title:'生命周期'})}/>
                 </View>
                 <Text style={elementStyles.text}>手势响应</Text>
             </View>
