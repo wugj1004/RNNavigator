@@ -5,6 +5,8 @@ import {StackNavigator, DrawerNavigator, TabNavigator, TabBarBottom} from 'react
 import Touch from './component/TouchComponent'
 import Responder from './component/ResponderComponent'
 import LifeCycle from './component/LifeCycleComponent'
+import ReduxNum from './component/ReduxNumComponent'
+import Num from './component/NumComponent'
 
 import Home from './container/ElementComponent'
 import Movie from './container/navigator/NavigatorParams'
@@ -152,14 +154,20 @@ const Stack = StackNavigator({
             title: '钱包',
         }
     },
-    Touch:{
+    Touch: {
         screen: Touch,
     },
-    Responder:{
+    Responder: {
         screen: Responder,
     },
-    LifeCycle:{
-        screen:LifeCycle,
+    LifeCycle: {
+        screen: LifeCycle,
+    },
+    ReduxNum:{
+        screen: ReduxNum,
+    },
+    Num: {
+        screen: Num,
     }
 });
 

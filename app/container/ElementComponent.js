@@ -14,6 +14,9 @@ class ElementComponent extends Component{
                     <Button  title="按钮手势响应" color="blue" onPress={()=>navigate('Touch',{title:'按钮手势响应'})}/>
                     <Button title="拖动滑动手势响应" color="black" onPress={()=>navigate("Responder",{title:'拖动滑动手势响应'})}/>
                     <Button title="生命周期" color="orange" onPress={()=>navigate("LifeCycle",{title:'生命周期'})}/>
+
+                    <Button title="普通计数器" color="blue" onPress={()=>navigate("Num",{title:'普通计数器'})}/>
+                    <Button title="Redux计数器" color="black" onPress={()=>navigate("ReduxNum",{title:'Redux计数器'})}/>
                 </View>
                 <Text style={elementStyles.text}>手势响应</Text>
             </View>
