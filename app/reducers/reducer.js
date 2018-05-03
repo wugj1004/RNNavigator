@@ -11,6 +11,7 @@ const defaultState = {
 }
 
 function counter(state = defaultState, action) {
+    //{ ...state, count: state.count + state.factor };...拆分对象，后者count覆盖拆分对象中的count
     switch (action.type) {
         case INCREASE:
             return { ...state, count: state.count + state.factor };
