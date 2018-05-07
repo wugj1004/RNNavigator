@@ -18,6 +18,8 @@ class ElementComponent extends Component{
                     <Button title="普通计数器" color="blue" onPress={()=>navigate("Num",{title:'普通计数器'})}/>
                     <Button title="Redux计数器" color="black" onPress={()=>navigate("ReduxNum",{title:'Redux计数器'})}/>
                     <Button title="数据持久化" color="orange" onPress={()=>navigate("MySto",{title:'数据持久化'})}/>
+
+                    <Button title="Realm数据持久化" color="blue" onPress={()=>navigate("MyReal",{title:'Realm数据持久化'})}/>
                 </View>
                 <Text style={elementStyles.text}>手势响应</Text>
             </View>

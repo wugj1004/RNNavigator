@@ -8,6 +8,8 @@ import LifeCycle from './component/LifeCycleComponent'
 import ReduxNum from './component/ReduxNumComponent'
 import Num from './component/NumComponent'
 import MySto from './component/MyStorage'
+import MyReal from './component/MyRealm'
+
 
 import Home from './container/ElementComponent'
 import Movie from './container/navigator/NavigatorParams'
@@ -172,6 +174,9 @@ const Stack = StackNavigator({
     },
     MySto: {
         screen: MySto,
+    },
+    MyReal: {
+        screen: MyReal,
     }
 });
 
