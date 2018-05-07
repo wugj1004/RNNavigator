@@ -7,6 +7,7 @@ import Responder from './component/ResponderComponent'
 import LifeCycle from './component/LifeCycleComponent'
 import ReduxNum from './component/ReduxNumComponent'
 import Num from './component/NumComponent'
+import MySto from './component/MyStorage'
 
 import Home from './container/ElementComponent'
 import Movie from './container/navigator/NavigatorParams'
@@ -168,6 +169,9 @@ const Stack = StackNavigator({
     },
     Num: {
         screen: Num,
+    },
+    MySto: {
+        screen: MySto,
     }
 });
 

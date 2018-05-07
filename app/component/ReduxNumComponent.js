@@ -64,7 +64,7 @@ class ReduxNumComponent extends Component {
 
 const mapStateToProps = state => ({
     counter: state.counter
-})
+});
 
 export default connect(mapStateToProps)(ReduxNumComponent);
 
