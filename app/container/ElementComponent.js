@@ -20,6 +20,7 @@ class ElementComponent extends Component{
                     <Button title="数据持久化" color="orange" onPress={()=>navigate("MySto",{title:'数据持久化'})}/>
 
                     <Button title="Realm数据持久化" color="blue" onPress={()=>navigate("MyReal",{title:'Realm数据持久化'})}/>
+                    <Button title="Rn和原生交互" color="black" onPress={()=>navigate("Interaction",{title:'Rn和原生交互'})}/>
                 </View>
                 <Text style={elementStyles.text}>手势响应</Text>
             </View>
@@ -47,4 +48,4 @@ const elementStyles = StyleSheet.create({
         marginTop:5
 
     }
-})
+});

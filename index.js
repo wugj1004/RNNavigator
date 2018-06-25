@@ -13,6 +13,7 @@ export default class App extends Component {
         super(props);
         // 初始状态
         this.state = {};
+          //初始化storage
           storage._getStorage();
           global.storage = storage;
       }

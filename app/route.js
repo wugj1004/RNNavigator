@@ -9,6 +9,7 @@ import ReduxNum from './component/ReduxNumComponent'
 import Num from './component/NumComponent'
 import MySto from './component/MyStorage'
 import MyReal from './component/MyRealm'
+import Interaction from './component/InteractionComponent'
 
 
 import Home from './container/ElementComponent'
@@ -177,6 +178,9 @@ const Stack = StackNavigator({
     },
     MyReal: {
         screen: MyReal,
+    },
+    Interaction: {
+        screen: Interaction,
     }
 });
 
