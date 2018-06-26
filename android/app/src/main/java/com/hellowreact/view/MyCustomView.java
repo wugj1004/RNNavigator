@@ -2,9 +2,14 @@ package com.hellowreact.view;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 /**
  * description:
@@ -42,5 +47,33 @@ public class MyCustomView  extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawRect(0, 0, getWidth(), getHeight(), mPaint);
+    }
+
+    public void onChangeColor() {
+        WritableMap event = Arguments.createMap();
+        event.putString("duration","MyMessage");//key用于js中的nativeEvent
+        dispatchEvent("onChangeColor",event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        /*等同于MyCustomViewManager中定义addEventEmitters方法全局控制分发事件
+        WritableMap event0 = Arguments.createMap();
+        event0.putString("duration","MyMessage");//key用于js中的nativeEvent
+        dispatchEvent("onChangeColor",event0);*/
+
+        WritableMap event0 = Arguments.createMap();
+        event0.putString("duration","MyMessage");//key用于js中的nativeEvent
+        dispatchEvent("onChangeColor",event0);
+        return super.onTouchEvent(event);
+    }
+
+    private void dispatchEvent(String eventName, WritableMap eventData){
+        ReactContext reactContext = (ReactContext) getContext();
+        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                getId(),//native和js两个视图会依据getId()而关联在一起
+                eventName,//事件名称
+                eventData
+        );
     }
 }

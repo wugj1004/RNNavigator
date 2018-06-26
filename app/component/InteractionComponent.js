@@ -22,19 +22,26 @@ class InteractionComponent extends Component {
     }
 
     componentWillMount() {
-        ToastAndroidCustom.showToast("1244");
+
+        console.log('interactionComponent componentWillMount');
     }
 
     render() {
         var view = <View style={InteractionStyle.container}>
             <Text>打开启动吐司</Text>
             <MyCustomView
-                color='red'
+                ref='view'
+                color='#00ff00'
+                handleClick={() => this._handleClick()}
                 style={{width:300, height:300}}/>
         </View>;
 
 
         return (view);
+    }
+
+    _handleClick(){
+        console.log('原生调用已经进入js');
     }
 
     componentDidMount() {
