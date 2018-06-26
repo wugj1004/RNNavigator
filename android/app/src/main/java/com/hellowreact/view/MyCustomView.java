@@ -49,10 +49,11 @@ public class MyCustomView  extends View {
         canvas.drawRect(0, 0, getWidth(), getHeight(), mPaint);
     }
 
-    public void onChangeColor() {
+
+    public void nativeToJS() {
         WritableMap event = Arguments.createMap();
         event.putString("duration","MyMessage");//key用于js中的nativeEvent
-        dispatchEvent("onChangeColor",event);
+        dispatchEvent("nativeToJS",event);
     }
 
     @Override
@@ -60,11 +61,8 @@ public class MyCustomView  extends View {
         /*等同于MyCustomViewManager中定义addEventEmitters方法全局控制分发事件
         WritableMap event0 = Arguments.createMap();
         event0.putString("duration","MyMessage");//key用于js中的nativeEvent
-        dispatchEvent("onChangeColor",event0);*/
+        dispatchEvent("nativeToJS",event0);*/
 
-        WritableMap event0 = Arguments.createMap();
-        event0.putString("duration","MyMessage");//key用于js中的nativeEvent
-        dispatchEvent("onChangeColor",event0);
         return super.onTouchEvent(event);
     }
 

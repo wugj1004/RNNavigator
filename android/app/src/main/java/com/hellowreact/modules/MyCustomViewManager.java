@@ -85,9 +85,9 @@ public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     @Override
     public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
         return MapBuilder.<String, Object>builder()
-                /*changeColor 字符串是java端发送事件是的名称，registrationName 字符串的值是固定的，不能修改，
-                onChangeColor 字符串是定义在js端的回调方法。*/
-                .put("onChangeColor", MapBuilder.of("registrationName", "onChangeColor"))
+                /*onChangeColor 字符串是java端发送事件是的名称，registrationName 字符串的值是固定的，不能修改，
+                JSGetNative 字符串是定义在js端的回调方法。*/
+                .put("nativeToJS", MapBuilder.of("registrationName", "JSGetNative"))
                 .build();
     }
 

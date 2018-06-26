@@ -34,7 +34,7 @@ export default class MyCustomView extends Component {
         var view = <RCTMyCustomView
             ref={CUSTOM_VIEW}
             {...this.props}
-            onChangeColor={() => this._onChange()}>
+            JSGetNative={() => this._onChange()}>
         </RCTMyCustomView>;
 
         return (view);
@@ -69,4 +69,4 @@ MyCustomView.propTypes = {
 };
 
 //第一个参数是原生视图的名字(JAVA层自定义ViewManager$getName的值)，第二个参数是一个描述组件接口的对象。
-var RCTMyCustomView = requireNativeComponent('MyCustomView', MyCustomView, {nativeOnly: {onChangeColor: true}});  // 拿到Native组件
+var RCTMyCustomView = requireNativeComponent('MyCustomView', MyCustomView, {nativeOnly: {JSGetNative: true}});  // 拿到Native组件

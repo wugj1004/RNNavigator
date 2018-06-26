@@ -18,7 +18,7 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
  */
 public class ClickEvent extends Event<ClickEvent> {
 
-    public static final String EVENT_NAME = "onChangeColor";
+    public static final String EVENT_NAME = "nativeToJS";
 
 
     public ClickEvent(int viewId) {
