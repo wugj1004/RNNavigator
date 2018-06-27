@@ -44,7 +44,7 @@ public class ClickEvent extends Event<ClickEvent> {
 
     private WritableMap serializeEventData() {
         WritableMap eventData = Arguments.createMap();
-        eventData.putString("selected", "aaaaaaaa");
+        eventData.putString("msg", "aaaaaaaa");
 
         return eventData;
     }

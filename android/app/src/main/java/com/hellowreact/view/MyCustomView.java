@@ -63,7 +63,7 @@ public class MyCustomView  extends View {
     public boolean onTouchEvent(MotionEvent event) {
         /*类似于MyCustomViewManager中定义addEventEmitters方法全局控制分发事件
         WritableMap event0 = Arguments.createMap();
-        event0.putString("duration","MyMessage");//key用于js中的nativeEvent
+        event0.putString("msg","MyMessage");//key用于js中的nativeEvent
         dispatchEvent("nativeToJS",event0);*/
         return super.onTouchEvent(event);
     }

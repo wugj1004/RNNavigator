@@ -57,7 +57,7 @@ public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     @Nullable
     @Override
     public Map<String, Integer> getCommandsMap() {
-        return MapBuilder.of("changeColor", CHANGE_COLOR);
+        return MapBuilder.of("nativeGetJS", CHANGE_COLOR);
     }
 
     /**

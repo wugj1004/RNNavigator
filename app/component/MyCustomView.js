@@ -35,7 +35,7 @@ export default class MyCustomView extends Component {
         var view = <RCTMyCustomView
             ref={CUSTOM_VIEW}
             {...this.props}
-            JSGetNative={() => this._onChange()}>
+            JSGetNative={this._onChange}>
 
         </RCTMyCustomView>;
 
@@ -43,12 +43,14 @@ export default class MyCustomView extends Component {
     }
 
     /*js获取到native传递过来的事件，并作出相应*/
-    _onChange() {// is not a function？没有设置this._onChange = this._onChange.bind(this);的时候
+    _onChange(event) {
+        // is not a function？没有设置this._onChange = this._onChange.bind(this);的时候
         if (!this.props.handleClick) {
             return;
         }
         this.props.handleClick();
-
+        var message = event.nativeEvent.msg;
+        console.log(`打印msg信息${message}`);
         //将事件传递给native
         this._jsToNative();
     }
@@ -60,7 +62,7 @@ export default class MyCustomView extends Component {
         UIManager.dispatchViewManagerCommand(
             ReactNative.findNodeHandle(self.refs[CUSTOM_VIEW]),
             1,  // 发送的commandId为1
-            null
+            [12,34,56]//null
         );
     }
 
