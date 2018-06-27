@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     protected static final String REACT_CLASS = "MyCustomView";
 
-    private static final int CHANGE_COLOR = 1;
+    private static final String CHANNEL_KEY = "channel_key";
+    private static final int CHANNEL_ID = 1;
 
     @Override
     public String getName() { // 返回了定义的View Module的名字
@@ -57,7 +58,7 @@ public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     @Nullable
     @Override
     public Map<String, Integer> getCommandsMap() {
-        return MapBuilder.of("nativeGetJS", CHANGE_COLOR);
+        return MapBuilder.of(CHANNEL_KEY, CHANNEL_ID);
     }
 
     /**
@@ -68,7 +69,18 @@ public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     public void receiveCommand(MyCustomView root, int commandId, @Nullable ReadableArray args) {
         super.receiveCommand(root, commandId, args);
         switch (commandId) {
-            case CHANGE_COLOR:
+            case CHANNEL_ID:
+                /*args中对应数据为js返回数据
+                UIManager.dispatchViewManagerCommand(
+                        ReactNative.findNodeHandle(self.refs[CUSTOM_VIEW]),
+                        UIManager.MyCustomView.Commands.channel_key,
+                        [12,34,56]);*/
+                if(args != null) {
+                    int first = args.getInt(0);//获取第一个位置的数据
+                    int second = args.getInt(1);//获取第一个位置的数据
+                    int three = args.getInt(2);//获取第一个位置的数据
+                    System.out.print(first+"..."+second+"..."+three);
+                }
                 root.nativeGetJS();
                 break;
                 default:

@@ -59,9 +59,10 @@ export default class MyCustomView extends Component {
      /*js把事件给Native*/
     _jsToNative() {//_changeColor
         let self = this;
+
         UIManager.dispatchViewManagerCommand(
             ReactNative.findNodeHandle(self.refs[CUSTOM_VIEW]),
-            1,  // 发送的commandId为1
+            UIManager.MyCustomView.Commands.channel_key,  // 发送的commandId为1;channel_key与java中getCommandsMap方法返回map指定id保持一致
             [12,34,56]//null
         );
     }
