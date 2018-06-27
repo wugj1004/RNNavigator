@@ -11,6 +11,7 @@ import {
     requireNativeComponent,
     View,
     UIManager,
+    Button,
 } from 'react-native';
 
 const ReactNative = require('ReactNative'); // ReactNative通过import没用
@@ -22,11 +23,11 @@ export default class MyCustomView extends Component {
     constructor(props) {
         super(props);
         console.log('MyCustomView constructor');
-        this._onChange = this._onChange.bind(this); // 一定需要这样调用才会把属性绑定过来
+        this._onChange = this._onChange.bind(this); // 一定需要这样调用才会把属性绑定过来；用于指定_onChange方法中this
     }
 
     componentWillMount() {
-        //this._onChange();
+
     }
 
     render() {
@@ -35,23 +36,26 @@ export default class MyCustomView extends Component {
             ref={CUSTOM_VIEW}
             {...this.props}
             JSGetNative={() => this._onChange()}>
+
         </RCTMyCustomView>;
 
         return (view);
     }
 
-
-    _onChange() {
+    /*js获取到native传递过来的事件，并作出相应*/
+    _onChange() {// is not a function？没有设置this._onChange = this._onChange.bind(this);的时候
         if (!this.props.handleClick) {
             return;
         }
         this.props.handleClick();
+
+        //将事件传递给native
+        this._jsToNative();
     }
 
 
-    // 把事件给Native
-    _changeColor() {  // is not a function？没有设置this._onChange = this._onChange.bind(this);的时候
-
+     /*js把事件给Native*/
+    _jsToNative() {//_changeColor
         let self = this;
         UIManager.dispatchViewManagerCommand(
             ReactNative.findNodeHandle(self.refs[CUSTOM_VIEW]),

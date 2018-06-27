@@ -5,7 +5,13 @@
  * 原生和Rn进行交互*/
 
 import React, {Component}from 'react'
-import  {Text,View,StyleSheet, NativeModules, requireNativeComponent } from 'react-native'
+import  {
+    Text,
+    View,
+    StyleSheet,
+    NativeModules,
+    requireNativeComponent,
+    Button,} from 'react-native'
 
 import MyCustomView from './MyCustomView'
 
@@ -36,13 +42,13 @@ class InteractionComponent extends Component {
                 style={{width:300, height:300}}/>
         </View>;
 
-
         return (view);
     }
 
     _handleClick(){
         console.log('原生调用已经进入js');
     }
+
 
     componentDidMount() {
 

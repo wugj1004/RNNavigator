@@ -57,8 +57,7 @@ public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     @Nullable
     @Override
     public Map<String, Integer> getCommandsMap() {
-//        return MapBuilder.of("changeColor", CHANGE_COLOR);
-        return super.getCommandsMap();
+        return MapBuilder.of("changeColor", CHANGE_COLOR);
     }
 
     /**
@@ -68,13 +67,13 @@ public class MyCustomViewManager extends SimpleViewManager<MyCustomView> {
     @Override
     public void receiveCommand(MyCustomView root, int commandId, @Nullable ReadableArray args) {
         super.receiveCommand(root, commandId, args);
-        /*switch (commandId) {
+        switch (commandId) {
             case CHANGE_COLOR:
-                root.onChangeColor();
+                root.nativeGetJS();
                 break;
                 default:
                     break;
-        }*/
+        }
     }
 
     /**

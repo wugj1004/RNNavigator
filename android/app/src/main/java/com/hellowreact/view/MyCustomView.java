@@ -50,22 +50,29 @@ public class MyCustomView  extends View {
     }
 
 
-    public void nativeToJS() {
-        WritableMap event = Arguments.createMap();
-        event.putString("duration","MyMessage");//key用于js中的nativeEvent
-        dispatchEvent("nativeToJS",event);
+    public void nativeGetJS() {
+        Toast.makeText(getContext(), "js调用原生方法", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 模拟事件分发
+     * @param event
+     * @return
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        /*等同于MyCustomViewManager中定义addEventEmitters方法全局控制分发事件
+        /*类似于MyCustomViewManager中定义addEventEmitters方法全局控制分发事件
         WritableMap event0 = Arguments.createMap();
         event0.putString("duration","MyMessage");//key用于js中的nativeEvent
         dispatchEvent("nativeToJS",event0);*/
-
         return super.onTouchEvent(event);
     }
 
+    /**
+     * 处理事件分发
+     * @param eventName Java端定义事件名称
+     * @param eventData 数据传递
+     */
     private void dispatchEvent(String eventName, WritableMap eventData){
         ReactContext reactContext = (ReactContext) getContext();
         reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
