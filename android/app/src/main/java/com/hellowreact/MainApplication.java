@@ -9,7 +9,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.hellowreact.modules.MyCustomViewReactPackage;
-import com.hellowreact.modules.MyReactPackage;
+import com.hellowreact.modules.ToastReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new RealmReactPackage(),
-              new MyReactPackage(),
+              new ToastReactPackage(),
               new MyCustomViewReactPackage()
       );
     }

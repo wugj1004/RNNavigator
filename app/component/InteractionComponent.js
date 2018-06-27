@@ -15,7 +15,7 @@ import  {
 
 import MyCustomView from './MyCustomView'
 
-var ToastAndroidCustom = NativeModules.ToastAndroidCustom;
+var RNToastModule = NativeModules.RNToastModule;
 
 
 class InteractionComponent extends Component {
@@ -28,7 +28,8 @@ class InteractionComponent extends Component {
     }
 
     componentWillMount() {
-
+        RNToastModule.showToast("InteractionComponent show",
+            (msg) => { console.log(`打印java callback 传递过来的数据${msg}`)})
         console.log('interactionComponent componentWillMount');
     }
 
